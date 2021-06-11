@@ -1,0 +1,11 @@
+.LoginContainer {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.LoginContainer .background {
+  filter: grayscale(100%);
+  margin-top: -60px;
+}

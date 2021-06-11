@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import Login from "./components/Login";
+import Main from "./components/Main";
+import { Router, Route } from "react-router-dom";
+import NotFound from "./NotFound";
+import SpotifyLogin from "./components/SpotifyLogin";
+import history from "./history";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <Route path="/redirect" component={SpotifyLogin}></Route>
+      <Route exact path="/" component={Main}></Route>
+      <Route exact path="/login" component={Login}></Route>
+      {/* <Route component={NotFound}></Route> */}
+    </Router>
+    // <BrowserRouter>
+    //   <Switch>
+    //     <Route path="/redirect" component={SpotifyLogin}></Route>
+    //     <Route
+    //       exact
+    //       path="/"
+    //       render={(props) => {
+    //         return props.location.state !== undefined ? (
+    //           <Main
+    //             spotify={spotifyApi}
+    //             token={props.location.state.token}
+    //           ></Main>
+    //         ) : (
+    //           <Login />
+    //         );
+    //       }}
+    //     ></Route>
+    //     <Route component={NotFound}></Route>
+    //   </Switch>
+    // </BrowserRouter>
   );
 }
 
