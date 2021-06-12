@@ -54,3 +54,27 @@
 .TrackGridContainer .trackContainer:hover .playButton {
   opacity: 1;
 }
+
+.TrackGridContainer .player {
+  background-color: peachpuff;
+}
+
+.TrackGridContainer .player .currentImageContainer .currentImage {
+  width: 100px;
+  height: 100px;
+}
+
+.TrackGridContainer .player .songInfoContainer .songName {
+  font-size: "30px";
+}
+
+.TrackGridContainer .player .songInfoContainer .artistName {
+  font-size: "15px";
+  padding-top: "10px";
+  padding-bottom: "4em";
+}
+
+.TrackGridContainer .player .playButtonContainer .playButton {
+  width: 40px;
+  height: 40px;
+}
