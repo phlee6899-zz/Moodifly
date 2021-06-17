@@ -33,8 +33,6 @@ export default function AverageChart({
           },
         ],
       }));
-
-      console.log(list);
     }
   }, [trackAnalytics]);
 
@@ -45,7 +43,7 @@ export default function AverageChart({
           return <MyLoader />;
         })}
       {trackAnalytics && (
-        <div className="trackContainer">
+        <div className="radarChart">
           <Radar
             className={"radar"}
             height={400}

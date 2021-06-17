@@ -18,7 +18,7 @@ export default function Main() {
   return (
     <div className="Container">
       {token && (
-        <div>
+        <div className="mainContainer">
           <TrackGridContainer></TrackGridContainer>
           <AverageChartContainer></AverageChartContainer>
         </div>

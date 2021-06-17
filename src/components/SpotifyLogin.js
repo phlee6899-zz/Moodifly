@@ -12,6 +12,7 @@ export default function SpotifyLogin() {
     spotifyApi.setAccessToken(accessToken);
     dispatch(addToken(accessToken));
     dispatch(getUserThunk());
+
     if (accessToken) {
       history.push("/");
     } else {

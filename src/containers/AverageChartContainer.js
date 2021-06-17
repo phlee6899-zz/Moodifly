@@ -23,12 +23,14 @@ export default function AverageChartContainer() {
     let danceability = 0;
     let energy = 0;
     let instrumentalness = 0;
+    let popularity = 0;
     let valence = 0;
     data.forEach((track) => {
       acousticness += track.acousticness;
       danceability += track.danceability;
       energy += track.energy;
       instrumentalness += track.instrumentalness;
+      popularity += track.popularity;
       valence += track.valence;
     });
 
@@ -57,10 +59,12 @@ export default function AverageChartContainer() {
         borderColor: "rgb(54, 162, 235)",
         pointBackgroundColor: "rgb(54, 162, 235)",
         pointBorderColor: "#fff",
+        pointBorderWidth: 1.5,
+        pointRadius: 4,
         pointHoverBackgroundColor: "#fff",
         pointHoverBorderColor: "rgb(54, 162, 235)",
         fill: true,
-        borderWidth: 2,
+        borderWidth: 3,
       },
     ],
   };
@@ -68,7 +72,25 @@ export default function AverageChartContainer() {
   const options = {
     scale: {
       ticks: {
-        maxTicksLimit: 2,
+        maxTicksLimit: 3,
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          font: {
+            size: 20,
+          },
+        },
+      },
+    },
+    scales: {
+      r: {
+        pointLabels: {
+          font: {
+            size: 15,
+          },
+        },
       },
     },
     maintainAspectRatio: false,

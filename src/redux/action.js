@@ -6,6 +6,9 @@ export const LOADING_FAILED_USER = "LOADING_FAILED_USER";
 export const LOADING_START_TOPTRACKS = "LOADING_START_TOPTRACKS";
 export const LOADING_SUCCESS_TOPTRACKS = "LOADING_SUCCESS_TOPTRACKS";
 export const LOADING_FAILED_TOPTRACKS = "LOADING_FAILED_TOPTRACKS";
+export const LOADING_START_TOPARTISTS = "LOADING_START_TOPARTISTS";
+export const LOADING_SUCCESS_TOPARTISTS = "LOADING_SUCCESS_TOPARTISTS";
+export const LOADING_FAILED_TOPARTISTS = "LOADING_FAILED_TOPARTISTS";
 export const LOADING_START_TRACKANALYTICS = "LOADING_START_TRACKANALYTICS";
 export const LOADING_SUCCESS_TRACKANALYTICS = "LOADING_SUCCESS_TRACKANALYTICS";
 export const LOADING_FAILED_TRACKANALYTICS = "LOADING_FAILED_TRACKANALYTICS";
@@ -51,6 +54,26 @@ export function loadingSuccessTopTracks(data) {
 export function loadingFailedTopTracks(error) {
   return {
     type: LOADING_FAILED_TOPTRACKS,
+    error: error,
+  };
+}
+
+export function loadingStartTopArtists() {
+  return {
+    type: LOADING_START_TOPARTISTS,
+  };
+}
+
+export function loadingSuccessTopArtists(data) {
+  return {
+    type: LOADING_SUCCESS_TOPARTISTS,
+    data: data,
+  };
+}
+
+export function loadingFailedTopArtists(error) {
+  return {
+    type: LOADING_FAILED_TOPARTISTS,
     error: error,
   };
 }
@@ -144,6 +167,7 @@ export function getTopTracksThunk(countryCode) {
             data.push(track);
           }
         });
+
         if (data.length < 10) {
           dispatch(loadingSuccessTopTracks([]));
           dispatch(loadingSuccessTrackAnalytics([]));
@@ -159,6 +183,24 @@ export function getTopTracksThunk(countryCode) {
       console.log(error);
       dispatch(loadingFailedTopTracks(error));
       dispatch(loadingFailedTrackAnalytics(error));
+    }
+  };
+}
+
+export function getTopArtistsThunk() {
+  return async (dispatch) => {
+    try {
+      dispatch(loadingStartTopArtists());
+      // await delayFunction(4000);
+      const options = {
+        time_range: "long_term",
+        limit: 50,
+      };
+      const result = await spotifyApi.getMyTopArtists(options);
+      dispatch(loadingSuccessTopArtists(result.items));
+    } catch (error) {
+      console.log(error);
+      dispatch(loadingFailedTopArtists(error));
     }
   };
 }

@@ -1,7 +1,11 @@
 import { useCallback } from "react";
 import TrackGrid from "../components/TrackGrid";
 import { useDispatch, useSelector } from "react-redux";
-import { getTopTracksThunk, getCountryPlaylistThunk } from "../redux/action";
+import {
+  getTopTracksThunk,
+  getCountryPlaylistThunk,
+  getTopArtistsThunk,
+} from "../redux/action";
 
 export default function TrackGridContainer() {
   const dispatch = useDispatch();
@@ -17,6 +21,10 @@ export default function TrackGridContainer() {
     [dispatch]
   );
 
+  const getTopArtists = useCallback(() => {
+    dispatch(getTopArtistsThunk());
+  }, [dispatch]);
+
   const getCountryPlaylist = useCallback(
     (countryCode) => {
       dispatch(getCountryPlaylistThunk(countryCode));
@@ -31,6 +39,7 @@ export default function TrackGridContainer() {
       topTracks={topTracks.content}
       countryPlaylist={countryPlaylist.content}
       getTopTracks={getTopTracks}
+      getTopArtists={getTopArtists}
       getCountryPlaylist={getCountryPlaylist}
       user={user}
     ></TrackGrid>

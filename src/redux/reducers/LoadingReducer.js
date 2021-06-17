@@ -2,6 +2,9 @@ import {
   LOADING_START_TOPTRACKS,
   LOADING_SUCCESS_TOPTRACKS,
   LOADING_FAILED_TOPTRACKS,
+  LOADING_START_TOPARTISTS,
+  LOADING_SUCCESS_TOPARTISTS,
+  LOADING_FAILED_TOPARTISTS,
   LOADING_START_TRACKANALYTICS,
   LOADING_SUCCESS_TRACKANALYTICS,
   LOADING_FAILED_TRACKANALYTICS,
@@ -12,6 +15,7 @@ import {
 
 const initState = {
   topTracks: {},
+  topArtists: {},
   countryPlaylist: {},
   trackAnalytics: {},
 };
@@ -19,6 +23,8 @@ const initState = {
 export default function loadingReducer(previousState = initState, action) {
   if (action.type === LOADING_START_TOPTRACKS) {
     return { ...previousState, topTracks: { loading: true } };
+  } else if (action.type === LOADING_START_TOPARTISTS) {
+    return { ...previousState, topArtists: { loading: true } };
   } else if (action.type === LOADING_START_TRACKANALYTICS) {
     return { ...previousState, trackAnalytics: { loading: true } };
   } else if (action.type === LOADING_START_COUNTRYPLAYLIST) {
@@ -27,6 +33,11 @@ export default function loadingReducer(previousState = initState, action) {
     return {
       ...previousState,
       topTracks: { loading: false, content: action.data },
+    };
+  } else if (action.type === LOADING_SUCCESS_TOPARTISTS) {
+    return {
+      ...previousState,
+      topArtists: { loading: false, content: action.data },
     };
   } else if (action.type === LOADING_SUCCESS_TRACKANALYTICS) {
     return {
@@ -42,6 +53,11 @@ export default function loadingReducer(previousState = initState, action) {
     return {
       ...previousState,
       topTracks: { loading: false, error: action.error },
+    };
+  } else if (action.type === LOADING_FAILED_TOPARTISTS) {
+    return {
+      ...previousState,
+      topArtists: { loading: false, error: action.error },
     };
   } else if (action.type === LOADING_FAILED_TRACKANALYTICS) {
     return {
