@@ -5,6 +5,7 @@ export function PlayButton({ onButtonClick }) {
       viewBox="0 0 60 60"
       width="50"
       height="50"
+      // fill="blue"
       onClick={onButtonClick}
     >
       <polygon points="0,0 50,30 0,60" />

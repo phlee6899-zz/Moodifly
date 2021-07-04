@@ -1,5 +1,79 @@
+.Container {
+  position: relative;
+  height: 100vh;
+}
+
+.Container.Login .loginMain {
+  width: 100%;
+  position: relative;
+}
+
+.Container.Login .loginMain .logoContainer {
+  display: flex;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
+}
+
+.Container.Login .loginMain .logoContainer img {
+  width: 100%;
+}
+
+.Container.Login .loginMain .textLoop {
+  display: inline;
+  position: absolute;
+  width: 200px;
+  z-index: 3;
+  top: 200px;
+  left: 50px;
+  font-size: 50px;
+  line-height: 1.4;
+  color: #f1faee;
+  font-weight: 900;
+}
+
+.buttonContainer {
+  display: flex;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  justify-content: center;
+  /* background-color: orange; */
+  bottom: 80px;
+}
+
+.buttonContainer a {
+  text-decoration: none;
+  font-size: 17px;
+  line-height: 1.2;
+  border-radius: 400px;
+  padding: 18px 45px 14px;
+  color: white;
+  background-color: #1db954;
+}
+
+.buttonContainer a:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 2em #16873e inset;
+}
+
+.backgroundCover {
+  position: absolute;
+  background-color: #484848;
+  opacity: 0.4;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
 .LoginContainer {
-  display: block;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   overflow: hidden;

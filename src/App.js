@@ -3,6 +3,8 @@ import React from "react";
 import Login from "./components/Login";
 import Main from "./components/Main";
 import MainRecommendation from "./components/MainRecommendation";
+import EmojiRecommendation from "./components/EmojiRecommendation";
+import SentimentRecommendation from "./components/SentimentRecommendation";
 import { Router, Route } from "react-router-dom";
 import NotFound from "./NotFound";
 import SpotifyLogin from "./components/SpotifyLogin";
@@ -15,6 +17,8 @@ function App() {
       <Route exact path="/" component={Main} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/mainrec" component={MainRecommendation} />
+      <Route exact path="/emojirec" component={EmojiRecommendation} />
+      <Route exact path="/sentimentrec" component={SentimentRecommendation} />
       {/* <Route component={NotFound}></Route> */}
     </Router>
     // <BrowserRouter>

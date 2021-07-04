@@ -3,6 +3,8 @@ import history from "../history";
 import { useEffect } from "react";
 import TrackGridContainer from "../containers/TrackGridContainer";
 import AverageChartContainer from "../containers/AverageChartContainer";
+import "./Main.css";
+import Navbar from "./Navbar";
 
 export default function Main() {
   const token = useSelector((state) => {
@@ -16,13 +18,16 @@ export default function Main() {
   }, []);
 
   return (
-    <div className="Container">
+    <>
       {token && (
         <div className="mainContainer">
-          <TrackGridContainer></TrackGridContainer>
-          <AverageChartContainer></AverageChartContainer>
+          <Navbar></Navbar>
+          <div className="contentContainer">
+            <TrackGridContainer></TrackGridContainer>
+            <AverageChartContainer></AverageChartContainer>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

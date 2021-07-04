@@ -16,6 +16,9 @@ export const LOADING_START_COUNTRYPLAYLIST = "LOADING_START_COUNTRYPLAYLIST";
 export const LOADING_SUCCESS_COUNTRYPLAYLIST =
   "LOADING_SUCCESS_COUNTRYPLAYLIST";
 export const LOADING_FAILED_COUNTRYPLAYLIST = "LOADING_FAILED_COUNTRYPLAYLIST";
+export const LOADING_START_CURRENTSONG = "LOADING_START_CURRENTSONG";
+export const LOADING_SUCCESS_CURRENTSONG = "LOADING_SUCCESS_CURRENTSONG";
+export const LOADING_FAILED_CURRENTSONG = "LOADING_FAILED_CURRENTSONG";
 
 export function addToken(token) {
   return {
@@ -118,12 +121,24 @@ export function loadingFailedCountryPlaylist(error) {
   };
 }
 
-function delayFunction(ms) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, ms);
-  });
+export function loadingStartCurrentSong() {
+  return {
+    type: LOADING_START_CURRENTSONG,
+  };
+}
+
+export function loadingSuccessCurrentSong(data) {
+  return {
+    type: LOADING_SUCCESS_CURRENTSONG,
+    data: data,
+  };
+}
+
+export function loadingFailedCurrentSong(error) {
+  return {
+    type: LOADING_FAILED_CURRENTSONG,
+    error: error,
+  };
 }
 
 export function getUserThunk() {
@@ -191,7 +206,6 @@ export function getTopArtistsThunk() {
   return async (dispatch) => {
     try {
       dispatch(loadingStartTopArtists());
-      // await delayFunction(4000);
       const options = {
         time_range: "long_term",
         limit: 50,
@@ -259,6 +273,35 @@ export function getCountryPlaylistThunk(countryCode) {
       dispatch(loadingSuccessCountryPlaylist(data.slice(0, 20)));
     } catch (error) {
       dispatch(loadingFailedCountryPlaylist(error));
+    }
+  };
+}
+
+export function getCurrentSongThunk(song) {
+  return async (dispatch) => {
+    try {
+      dispatch(loadingStartCurrentSong());
+      const result = await spotifyApi.getAudioFeaturesForTrack(song.id);
+      dispatch(
+        loadingSuccessCurrentSong({
+          info: {
+            name: song.name,
+            img: song.img,
+            id: song.id,
+            artists: song.artists,
+          },
+          features: {
+            acousticness: result.acousticness,
+            danceability: result.danceability,
+            energy: result.energy,
+            instrumentalness: result.instrumentalness,
+            valence: result.valence,
+          },
+        })
+      );
+    } catch (error) {
+      console.log(error);
+      dispatch(loadingFailedCurrentSong(error));
     }
   };
 }

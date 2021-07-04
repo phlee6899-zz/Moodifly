@@ -1,4 +1,7 @@
-.Container {
+.mainContainer .contentContainer {
   display: flex;
-  flex-wrap: wrap;
+  height: 100vh;
+  padding-top: 70px;
+  box-sizing: border-box;
+  background-color: black;
 }
