@@ -81,12 +81,17 @@
   z-index: 1;
   background-color: yellowgreen;
   visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navDesc.show {
   visibility: visible;
 }
 
-/* .navDesc {
-  visibility: hidden;
-} */
+.navDesc .mainDesc {
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+}
