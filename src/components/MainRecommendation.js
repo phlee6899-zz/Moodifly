@@ -26,19 +26,21 @@ export default function MainRecommendation({
   const topArtists = useSelector((state) => state.data.topArtists.content);
   const user = useSelector((state) => state.user.user);
 
+  const token = useSelector((state) => {
+    return state.token;
+  });
+
   useEffect(() => {
     if (token === "") {
       history.push("/login");
+    } else {
+      spotifyApi.setAccessToken(token.token);
     }
   }, []);
 
   useEffect(() => {
     getRecommendation();
   }, []);
-
-  const token = useSelector((state) => {
-    return state.token;
-  });
 
   const [current, setCurrent] = useState({
     name: "",

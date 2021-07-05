@@ -5,6 +5,29 @@ import "./Navbar.css";
 import spotifyApi from "../Spotify";
 
 export default function Navbar() {
+  function mouseoverAction(e) {
+    const descSubmenu = document.querySelector(".navDesc");
+    descSubmenu.classList.add("show");
+    const mainDesc = document.querySelector(".mainDesc");
+    // node.appendChild(textnode);
+    switch (e.target.className) {
+      case "historyLabel":
+        mainDesc.innerText = "History Contents";
+        break;
+      case "textLabel":
+        mainDesc.innerText = "Text Contents";
+        break;
+      case "emojiLabel":
+        mainDesc.innerText = "Emoji Contents";
+        break;
+    }
+  }
+
+  function mouseLeaveAction(e) {
+    const descSubmenu = document.querySelector(".navDesc");
+    descSubmenu.classList.remove("show");
+  }
+
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.user.user);
@@ -21,9 +44,30 @@ export default function Navbar() {
         <div className="inner">
           <div className="menu">
             <ul>
-              <li onClick={() => history.push("/mainrec")}>History</li>
-              <li onClick={() => history.push("/sentimentrec")}>Text</li>
-              <li onClick={() => history.push("/emojirec")}>Emoji</li>
+              <li
+                className="historyLabel"
+                onClick={() => history.push("/mainrec")}
+                onMouseOver={mouseoverAction}
+                onMouseLeave={mouseLeaveAction}
+              >
+                History
+              </li>
+              <li
+                className="textLabel"
+                onClick={() => history.push("/sentimentrec")}
+                onMouseOver={mouseoverAction}
+                onMouseLeave={mouseLeaveAction}
+              >
+                Text
+              </li>
+              <li
+                className="emojiLabel"
+                onClick={() => history.push("/emojirec")}
+                onMouseOver={mouseoverAction}
+                onMouseLeave={mouseLeaveAction}
+              >
+                Emoji
+              </li>
             </ul>
           </div>
         </div>
@@ -55,11 +99,9 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      {/* <div className="desc">
+      <div className="navDesc">
         <div className="mainDesc">Main Description</div>
-        <div className="textDesc">Text Description</div>
-        <div className="emojiDesc">Emoji Description</div>
-      </div> */}
+      </div>
     </>
   );
 }

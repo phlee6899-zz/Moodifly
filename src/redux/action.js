@@ -153,6 +153,8 @@ export function getUserThunk() {
 }
 
 export function getTopTracksThunk(countryCode) {
+  console.log("thunk");
+  console.log(spotifyApi.getAccessToken());
   return async (dispatch) => {
     try {
       dispatch(loadingStartTopTracks());

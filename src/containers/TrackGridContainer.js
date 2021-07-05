@@ -1,11 +1,13 @@
 import { useCallback } from "react";
 import TrackGrid from "../components/TrackGrid";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import {
   getTopTracksThunk,
   getCountryPlaylistThunk,
   getTopArtistsThunk,
 } from "../redux/action";
+import spotifyApi from "../Spotify";
 
 export default function TrackGridContainer() {
   const dispatch = useDispatch();
@@ -13,6 +15,12 @@ export default function TrackGridContainer() {
   const topTracks = useSelector((state) => state.data.topTracks);
   const countryPlaylist = useSelector((state) => state.data.countryPlaylist);
   const user = useSelector((state) => state.user);
+
+  const token = useSelector((state) => {
+    return state.token;
+  });
+
+  spotifyApi.setAccessToken(token.token);
 
   const getTopTracks = useCallback(
     (countryCode) => {

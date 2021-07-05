@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import spotifyApi from "../Spotify";
 import AverageChart from "../components/AverageChart";
 import { useDispatch, useSelector } from "react-redux";
 import { getTopTracksThunk } from "../redux/action";
@@ -9,6 +10,12 @@ export default function AverageChartContainer() {
   const trackAnalytics = useSelector((state) => state.data.trackAnalytics);
   const user = useSelector((state) => state.user);
   const current = useSelector((state) => state.current);
+
+  const token = useSelector((state) => {
+    return state.token;
+  });
+
+  spotifyApi.setAccessToken(token.token);
 
   const dispatch = useDispatch();
 

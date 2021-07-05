@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import TrackGridContainer from "../containers/TrackGridContainer";
 import AverageChartContainer from "../containers/AverageChartContainer";
 import "./Main.css";
+import spotifyApi from "../Spotify";
 import Navbar from "./Navbar";
 
 export default function Main() {
@@ -14,6 +15,8 @@ export default function Main() {
   useEffect(() => {
     if (token === "") {
       history.push("/login");
+    } else {
+      spotifyApi.setAccessToken(token.token);
     }
   }, []);
 

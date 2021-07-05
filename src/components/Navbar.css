@@ -69,3 +69,24 @@
   color: white;
   font-weight: 500;
 }
+
+.navDesc {
+  position: absolute;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  height: 120px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 1;
+  background-color: yellowgreen;
+  visibility: hidden;
+}
+
+.navDesc.show {
+  visibility: visible;
+}
+
+/* .navDesc {
+  visibility: hidden;
+} */

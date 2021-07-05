@@ -43,6 +43,8 @@ export default function EmojiRecommendation() {
     return state.token;
   });
 
+  spotifyApi.setAccessToken(token.token);
+
   const [current, setCurrent] = useState({
     name: "",
     img: "",
