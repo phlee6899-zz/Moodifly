@@ -1,4 +1,6 @@
-const redirectUri = "https://flamboyant-bhaskara-082736.netlify.app/redirect";
+const redirectUri = "http://localhost:3000/redirect";
+
+// "https://flamboyant-bhaskara-082736.netlify.app/redirect";
 const clientId = "bb2b70ec1664483aa816db5e011747ad";
 const authEndpoint = "https://accounts.spotify.com/authorize";
 

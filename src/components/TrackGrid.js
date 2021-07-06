@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCurrentSongThunk } from "../redux/action";
 import MyLoader from "./ContentLoader";
 import "./TrackGrid.css";
@@ -11,6 +11,7 @@ import "swiper/swiper.min.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
+import spotifyApi from "../Spotify";
 
 import SwiperCore, {
   Navigation,
@@ -32,6 +33,12 @@ export default function TrackGrid({
   user,
 }) {
   const dispatch = useDispatch();
+
+  const token = useSelector((state) => {
+    return state.token;
+  });
+
+  spotifyApi.setAccessToken(token.token);
 
   const [current, setCurrent] = useState({
     name: "",
@@ -124,8 +131,6 @@ export default function TrackGrid({
                     <div
                       className="playButton"
                       onClick={(e) => {
-                        console.log(document.getElementById(ind).currentTime);
-                        console.log(document.getElementById(ind).paused);
                         if (
                           !document.getElementById(ind).paused ||
                           document.getElementById(ind).currentTime
@@ -182,7 +187,16 @@ export default function TrackGrid({
               return (
                 <SwiperSlide>
                   <div>
-                    <audio id={ind} muted>
+                    <audio
+                      id={ind}
+                      muted
+                      onEnded={() => {
+                        document.getElementById(ind).currentTime = 0;
+                        document
+                          .querySelector(".playButton.playing")
+                          .classList.remove("playing");
+                      }}
+                    >
                       <source src={each_item.preview_url} />
                     </audio>
                   </div>
@@ -194,11 +208,12 @@ export default function TrackGrid({
                   <a>
                     <div
                       className="playButton"
-                      onClick={() => {
+                      onClick={(e) => {
                         if (
                           !document.getElementById(ind).paused ||
                           document.getElementById(ind).currentTime
                         ) {
+                          e.currentTarget.classList.remove("playing");
                           setCurrent({
                             name: current.name,
                             img: current.img,
@@ -210,10 +225,25 @@ export default function TrackGrid({
                           document.getElementById(ind).pause();
                           document.getElementById(ind).currentTime = 0;
                         } else {
+                          const playingList =
+                            document.querySelectorAll(".playButton");
+                          playingList.forEach((each_element) => {
+                            each_element.classList.remove("playing");
+                          });
                           if (0 <= current.id) {
                             document.getElementById(current.id).muted = true;
                             document.getElementById(current.id).pause();
                           }
+                          e.currentTarget.classList.add("playing");
+                          dispatch(
+                            getCurrentSongThunk({
+                              name: current.name,
+                              img: current.img,
+                              id: each_item.id,
+                              playing: false,
+                              artists: current.artists,
+                            })
+                          );
                           setCurrent({
                             name: each_item.name,
                             img: each_item.album.images[0].url,
@@ -221,6 +251,7 @@ export default function TrackGrid({
                             playing: true,
                             artists: each_item.artists,
                           });
+                          console.log(current.name);
                           document.getElementById(ind).muted = false;
                           document.getElementById(ind).play();
                         }

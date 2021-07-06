@@ -91,6 +91,32 @@ export default function AverageChartContainer() {
     ],
   };
 
+  const countryData = {
+    labels: [
+      "Acousticness",
+      "Danceability",
+      "Energy",
+      "Instrumentalness",
+      "Valence",
+    ],
+    datasets: [
+      {
+        label: "Current Track Analysis",
+        data: [],
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgb(54, 162, 235)",
+        pointBackgroundColor: "rgb(54, 162, 235)",
+        pointBorderColor: "#fff",
+        pointBorderWidth: 1,
+        pointRadius: 4,
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(54, 162, 235)",
+        fill: true,
+        borderWidth: 3,
+      },
+    ],
+  };
+
   const options = {
     plugins: {
       legend: {
@@ -146,6 +172,7 @@ export default function AverageChartContainer() {
       getTopTracks={getTopTracks}
       averageFunction={averageList}
       data={data}
+      countryData={countryData}
       options={options}
       user={user}
     ></AverageChart>

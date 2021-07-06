@@ -75,11 +75,11 @@
   left: 0;
   top: 70px;
   width: 100%;
-  height: 120px;
+  height: 138px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  z-index: 1;
-  background-color: yellowgreen;
+  z-index: 10;
+  background-color: #f1faee;
   visibility: hidden;
   display: flex;
   justify-content: center;
@@ -90,8 +90,16 @@
   visibility: visible;
 }
 
-.navDesc .mainDesc {
-  color: white;
+.navDesc .title {
+  color: black;
+  width: 70%;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 800;
+}
+
+.navDesc .mainDesc {
+  color: black;
+  width: 70%;
+  font-size: 17px;
+  font-weight: 500;
 }

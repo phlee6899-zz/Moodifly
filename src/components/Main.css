@@ -5,3 +5,11 @@
   box-sizing: border-box;
   background-color: black;
 }
+
+.mainContainer .pickContainer {
+  display: flex;
+  height: 100vh;
+  background-color: #f1faee;
+  align-items: center;
+  justify-content: center;
+}

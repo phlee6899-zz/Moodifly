@@ -153,8 +153,6 @@ export function getUserThunk() {
 }
 
 export function getTopTracksThunk(countryCode) {
-  console.log("thunk");
-  console.log(spotifyApi.getAccessToken());
   return async (dispatch) => {
     try {
       dispatch(loadingStartTopTracks());
@@ -255,7 +253,6 @@ export function getCountryPlaylistThunk(countryCode) {
         optionsPlaylist
       );
 
-      console.log(result);
       const trackIDs = [];
       result.items.forEach((track) => {
         trackIDs.push(track.track.id);
