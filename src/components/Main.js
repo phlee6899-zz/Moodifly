@@ -14,7 +14,7 @@ export default function Main() {
   });
   const topTracks = useSelector((state) => state.data.topTracks.content);
   const topArtists = useSelector((state) => state.data.topArtists.content);
-
+  // console.log(topTracks);
   useEffect(() => {
     if (token === "") {
       history.push("/login");
