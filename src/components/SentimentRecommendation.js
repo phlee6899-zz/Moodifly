@@ -100,6 +100,7 @@ export default function SentimentRecommendation() {
       document.getElementById(current.id).pause();
       document.getElementById(current.id).currentTime = 0;
     }
+
     axios
       .post(
         "http://localhost:8080/api",
@@ -122,13 +123,26 @@ export default function SentimentRecommendation() {
         });
 
         const params = parameterTune(res.data.overall);
-        console.log(params);
+
+        let seedArtist = [];
+        let seedTrack = [];
+
+        if (topTracks.length >= 2 && topArtists.length >= 3) {
+          seedTrack = topTracks.slice(0, 2).map((track) => track.id);
+          seedArtist = topArtists.slice(0, 3).map((artist) => artist.id);
+        } else {
+          if (topArtists.length > topTracks.length) {
+            seedArtist = topArtists.slice(0, 5).map((artist) => artist.id);
+          } else {
+            seedTrack = topTracks.slice(0, 5).map((track) => track.id);
+          }
+        }
 
         spotifyApi
           .getRecommendations({
             market: user.country,
-            seed_artists: topArtists.slice(0, 3).map((artist) => artist.id),
-            seed_tracks: topTracks.slice(0, 2).map((track) => track.id),
+            seed_artists: seedArtist,
+            seed_tracks: seedTrack,
             limit: 20,
             min_acousticness: 0,
             max_acousticness: 1,
@@ -172,16 +186,14 @@ export default function SentimentRecommendation() {
                 spotifyApi.getTrack(song.tracks[0].id).then((track) => {
                   setFeatures({ ...feature, popularity: track.popularity });
                 });
-                console.log(feature.valence);
-                console.log(feature.energy);
-                console.log("****");
               });
           });
       })
       .catch((error) => {
         console.log(error);
+        history.push("/login");
       });
-  }, 700);
+  }, 750);
   const getRecommendation = () => {
     const el = document.querySelector(".inputText");
     let user_input = el.value;
@@ -192,7 +204,13 @@ export default function SentimentRecommendation() {
 
   const saveTrack = () => {
     console.log("saved");
-    spotifyApi.addToMySavedTracks({ ids: [current.id] });
+
+    try {
+      spotifyApi.addToMySavedTracks({ ids: [current.id] });
+    } catch (error) {
+      history.push("/login");
+    }
+
     getRecommendation();
   };
 
@@ -459,13 +477,13 @@ export default function SentimentRecommendation() {
             <div className="navButtons">
               <button
                 className="optionButton"
-                onClick={() => history.push("/emojirec")}
+                onClick={() => history.push("/emoji")}
               >
                 Emoji Recommendation
               </button>
               <button
                 className="optionButton"
-                onClick={() => history.push("/mainrec")}
+                onClick={() => history.push("/history")}
               >
                 Listening History Recommendation
               </button>

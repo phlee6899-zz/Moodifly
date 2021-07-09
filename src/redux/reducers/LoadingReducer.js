@@ -11,6 +11,7 @@ import {
   LOADING_START_COUNTRYPLAYLIST,
   LOADING_SUCCESS_COUNTRYPLAYLIST,
   LOADING_FAILED_COUNTRYPLAYLIST,
+  ADD_TOPARTISTS,
 } from "../action";
 
 const initState = {
@@ -39,6 +40,11 @@ export default function loadingReducer(previousState = initState, action) {
       ...previousState,
       topArtists: { loading: false, content: action.data },
     };
+  } else if (action.type === ADD_TOPARTISTS) {
+    return {
+      ...previousState,
+      topArtists: { loading: false, content: action.data },
+    };
   } else if (action.type === LOADING_SUCCESS_TRACKANALYTICS) {
     return {
       ...previousState,
@@ -47,7 +53,11 @@ export default function loadingReducer(previousState = initState, action) {
   } else if (action.type === LOADING_SUCCESS_COUNTRYPLAYLIST) {
     return {
       ...previousState,
-      countryPlaylist: { loading: false, content: action.data },
+      countryPlaylist: {
+        loading: false,
+        content: action.data,
+        topArtist: action.topArtist,
+      },
     };
   } else if (action.type === LOADING_FAILED_TOPTRACKS) {
     return {

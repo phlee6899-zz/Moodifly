@@ -1,4 +1,5 @@
 import spotifyApi from "../Spotify";
+import history from "../history";
 
 export const ADD_TOKEN = "ADD_TOKEN";
 export const ADD_USER = "ADD_USER";
@@ -19,6 +20,15 @@ export const LOADING_FAILED_COUNTRYPLAYLIST = "LOADING_FAILED_COUNTRYPLAYLIST";
 export const LOADING_START_CURRENTSONG = "LOADING_START_CURRENTSONG";
 export const LOADING_SUCCESS_CURRENTSONG = "LOADING_SUCCESS_CURRENTSONG";
 export const LOADING_FAILED_CURRENTSONG = "LOADING_FAILED_CURRENTSONG";
+export const ADD_TOPARTISTS = "ADD_TOPARTISTS";
+
+export function addTopArtists(artists) {
+  console.log(artists);
+  return {
+    type: ADD_TOPARTISTS,
+    data: artists,
+  };
+}
 
 export function addToken(token) {
   return {
@@ -107,10 +117,11 @@ export function loadingStartCountryPlaylist() {
   };
 }
 
-export function loadingSuccessCountryPlaylist(data) {
+export function loadingSuccessCountryPlaylist(data, artistList) {
   return {
     type: LOADING_SUCCESS_COUNTRYPLAYLIST,
     data: data,
+    topArtist: artistList,
   };
 }
 
@@ -148,6 +159,7 @@ export function getUserThunk() {
       dispatch(addUser(user));
     } catch (error) {
       dispatch(loadingFailedUser(error));
+      history.push("/login");
     }
   };
 }
@@ -198,6 +210,7 @@ export function getTopTracksThunk(countryCode) {
       console.log(error);
       dispatch(loadingFailedTopTracks(error));
       dispatch(loadingFailedTrackAnalytics(error));
+      history.push("/login");
     }
   };
 }
@@ -215,10 +228,12 @@ export function getTopArtistsThunk() {
     } catch (error) {
       console.log(error);
       dispatch(loadingFailedTopArtists(error));
+      history.push("/login");
     }
   };
 }
 
+// const topArtists = useSelector((state) => state.data.topArtists);
 export function getCountryPlaylistThunk(countryCode) {
   const regionNamesInEnglish = new Intl.DisplayNames(["en"], {
     type: "region",
@@ -269,9 +284,64 @@ export function getCountryPlaylistThunk(countryCode) {
         }
       });
 
-      dispatch(loadingSuccessCountryPlaylist(data.slice(0, 20)));
+      async function artistHelper(id) {
+        console.log("GET ARTIST");
+        return new Promise((resolve) => {
+          spotifyApi.getArtist(id).then((artistInfo) => {
+            if (artistInfo.images.length !== 0) {
+              const name = artistInfo.name;
+              const imageUrl = artistInfo.images[0].url;
+              const popularity = artistInfo.popularity;
+              const obj = {
+                main: true,
+                related: id,
+                name: name,
+                id: id,
+                popularity: popularity,
+                image: imageUrl,
+                selected: false,
+              };
+              resolve(obj);
+            }
+          });
+        });
+      }
+
+      async function parallel(array) {
+        const promises = array.map((id) => artistHelper(id));
+        const parallelResult = await Promise.all(promises);
+        return parallelResult;
+      }
+
+      const nameList = [];
+      const artistIDList = [];
+
+      // list.push(test(artist));
+      data.map(async (song) => {
+        song.artists.forEach(async (artist) => {
+          const name = artist.name;
+          const id = artist.id;
+          if (!nameList.includes(name)) {
+            nameList.push(name);
+            artistIDList.push(id);
+          }
+        });
+      });
+
+      const artistList = await parallel(artistIDList);
+      artistList.sort((a, b) =>
+        a.popularity > b.popularity ? -1 : b.popularity >= a.popularity ? 1 : 0
+      );
+
+      dispatch(
+        loadingSuccessCountryPlaylist(
+          data.slice(0, 20),
+          artistList.slice(0, 12)
+        )
+      );
     } catch (error) {
       dispatch(loadingFailedCountryPlaylist(error));
+      history.push("/login");
     }
   };
 }
@@ -301,6 +371,7 @@ export function getCurrentSongThunk(song) {
     } catch (error) {
       console.log(error);
       dispatch(loadingFailedCurrentSong(error));
+      history.push("/login");
     }
   };
 }

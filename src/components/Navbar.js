@@ -59,7 +59,7 @@ export default function Navbar() {
             <ul>
               <li
                 className="historyLabel"
-                onClick={() => history.push("/mainrec")}
+                onClick={() => history.push("/history")}
                 onMouseOver={mouseoverAction}
                 onMouseLeave={mouseLeaveAction}
               >
@@ -67,7 +67,7 @@ export default function Navbar() {
               </li>
               <li
                 className="textLabel"
-                onClick={() => history.push("/sentimentrec")}
+                onClick={() => history.push("/sentiment")}
                 onMouseOver={mouseoverAction}
                 onMouseLeave={mouseLeaveAction}
               >
@@ -75,7 +75,7 @@ export default function Navbar() {
               </li>
               <li
                 className="emojiLabel"
-                onClick={() => history.push("/emojirec")}
+                onClick={() => history.push("/emoji")}
                 onMouseOver={mouseoverAction}
                 onMouseLeave={mouseLeaveAction}
               >

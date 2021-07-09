@@ -11,12 +11,6 @@ import { sampleSize, shuffle } from "lodash";
 import { fullData, randomize } from "../data";
 
 export default function EmojiRecommendation() {
-  // const happyList = emojiList["happy"];
-  // const negativeList = emojiList["negative"];
-  // const slowList = emojiList["slow"];
-  // const fastList = emojiList["fast"];
-  // const instrumentalList = emojiList["instrumental"];
-
   const [features, setFeatures] = useState({});
   const [selected, setSelected] = useState([]);
   const [emojiList, setList] = useState(randomize());
@@ -133,7 +127,6 @@ export default function EmojiRecommendation() {
   };
 
   const getRecommendation = (params) => {
-    console.log(params);
     if (
       !topArtists ||
       !topTracks ||
@@ -201,13 +194,27 @@ export default function EmojiRecommendation() {
         })
         .catch((error) => {
           console.log(error);
+          history.push("/login");
         });
     } else {
+      let seedArtist = [];
+      let seedTrack = [];
+
+      if (topTracks.length >= 2 && topArtists.length >= 3) {
+        seedTrack = topTracks.slice(0, 2).map((track) => track.id);
+        seedArtist = topArtists.slice(0, 3).map((artist) => artist.id);
+      } else {
+        if (topArtists.length > topTracks.length) {
+          seedArtist = topArtists.slice(0, 5).map((artist) => artist.id);
+        } else {
+          seedTrack = topTracks.slice(0, 5).map((track) => track.id);
+        }
+      }
       spotifyApi
         .getRecommendations({
           market: user.country,
-          seed_artists: topArtists.slice(0, 3).map((artist) => artist.id),
-          seed_tracks: topTracks.slice(0, 2).map((track) => track.id),
+          seed_artists: seedArtist,
+          seed_tracks: seedTrack,
           limit: 20,
           min_energy: params[5],
           max_energy: params[6],
@@ -251,13 +258,18 @@ export default function EmojiRecommendation() {
         })
         .catch((error) => {
           console.log(error);
+          history.push("/login");
         });
     }
   };
 
   const saveTrack = () => {
     console.log("saved");
-    spotifyApi.addToMySavedTracks({ ids: [current.id] });
+    try {
+      spotifyApi.addToMySavedTracks({ ids: [current.id] });
+    } catch (error) {
+      history.push("/login");
+    }
   };
 
   const handleClick = () => {
@@ -518,13 +530,13 @@ export default function EmojiRecommendation() {
             <div className="navButtons">
               <button
                 className="optionButton"
-                onClick={() => history.push("/emojirec")}
+                onClick={() => history.push("/emoji")}
               >
                 Emoji Recommendation
               </button>
               <button
                 className="optionButton"
-                onClick={() => history.push("/mainrec")}
+                onClick={() => history.push("/history")}
               >
                 Listening History Recommendation
               </button>

@@ -26,6 +26,7 @@ export default function TrackGrid({
   topTrackLoading,
   countryPlaylistLoading,
   topTracks,
+  topArtists,
   countryPlaylist,
   getTopTracks,
   getTopArtists,
@@ -59,14 +60,20 @@ export default function TrackGrid({
     if (
       user.user !== undefined &&
       topTracks !== undefined &&
-      topTracks.length === 0
+      topTracks.length === 0 &&
+      !countryPlaylist
     ) {
+      console.log("TRACKGRID ARTIST");
       getCountryPlaylist(user.user.country);
     }
   }, [topTracks]);
 
   useEffect(() => {
-    getTopArtists();
+    console.log("here");
+    if (topArtists === undefined) {
+      console.log("in");
+      getTopArtists();
+    }
   }, []);
 
   const formatArtistName = () => {
@@ -75,11 +82,6 @@ export default function TrackGrid({
 
   return (
     <div className="TrackGridContainer">
-      {/* {!topTrackLoading && topTracks ? (
-        <p className="trackGridLabel">Popular Near You</p>
-      ) : (
-        <p className="trackGridLabel">Your Favorite</p>
-      )} */}
       <div className="carouselContainer">
         <Swiper
           effect={"coverflow"}
@@ -89,11 +91,6 @@ export default function TrackGrid({
           slideToClickedSlide={true}
           initialSlide="5"
           navigation
-          // autoplay={{
-          //   delay: 4000,
-          //   disableOnInteraction: false,
-          //   pauseOnMouseEnter: true,
-          // }}
           coverflowEffect={{
             rotate: 50,
             stretch: 0,
@@ -105,6 +102,7 @@ export default function TrackGrid({
           className="mySwiper"
         >
           {topTracks &&
+            !countryPlaylist &&
             topTracks.map((each_item, ind) => {
               return (
                 <SwiperSlide>

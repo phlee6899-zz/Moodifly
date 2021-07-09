@@ -81,9 +81,7 @@
   z-index: 10;
   background-color: #f1faee;
   visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-left: 30px;
 }
 
 .navDesc.show {
@@ -95,6 +93,8 @@
   width: 70%;
   font-size: 17px;
   font-weight: 800;
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 
 .navDesc .mainDesc {
@@ -102,4 +102,5 @@
   width: 70%;
   font-size: 17px;
   font-weight: 500;
+  line-height: 20px;
 }

@@ -1,23 +1,118 @@
-/* .selectContainer {
-  display: flex;
-  width: 90%;
-  height: 90%;
+.selectContainer {
+  width: 100%;
+  height: 100%;
   display: block;
   background: black;
-  justify-content: center;
-  align-items: center;
 }
 
 .selectContainer .selectionContainer {
   background-color: black;
-  width: 80%;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.selectContainer .selectionContainer .finishContainer {
+  margin: 50px;
+}
+
+.selectContainer .selectionContainer .finishContainer .finishButton {
+  display: block;
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 250px;
+  height: 50px;
+  margin: auto;
+  background-color: white;
 }
 
 .selectContainer .selectionContainer .selectionText {
-  margin-left: 40px;
-  margin-top: 30px;
-  margin-top: 50px;
+  width: 100%;
+  padding-left: 40px;
+  padding-top: 40px;
   color: white;
   font-size: 22px;
   font-weight: 700;
-} */
+}
+
+.selectContainer .selectionContainer .selectionBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.selectContainer .selectionContainer .selectionBox .artistContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px;
+  width: 160px;
+  height: 160px;
+  cursor: pointer;
+  position: relative;
+}
+
+.selectContainer
+  .selectionContainer
+  .selectionBox
+  .artistContainer
+  .artistImage {
+  width: 100%;
+  height: 100%;
+}
+
+.selectContainer
+  .selectionContainer
+  .selectionBox
+  .artistContainer
+  .artistImage
+  .check {
+  visibility: hidden;
+  color: white;
+  font-size: 35px;
+  position: absolute;
+  right: 5px;
+}
+
+.selectContainer
+  .selectionContainer
+  .selectionBox
+  .artistContainer
+  .artistImage
+  .check.selected {
+  visibility: visible;
+  color: #e63946;
+  font-size: 42px;
+  position: absolute;
+  right: 10px;
+}
+
+.selectContainer
+  .selectionContainer
+  .selectionBox
+  .artistContainer
+  .artistImage
+  .originalImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.selectContainer
+  .selectionContainer
+  .selectionBox
+  .artistContainer
+  .artistName {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}

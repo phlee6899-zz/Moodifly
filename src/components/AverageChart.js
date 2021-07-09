@@ -143,20 +143,17 @@ export default function AverageChart({
       <div className="recOptions">
         <button
           className="optionButton"
-          onClick={() => history.push("/mainrec")}
+          onClick={() => history.push("/history")}
         >
           Listening History Recommendation
         </button>
         <button
           className="optionButton"
-          onClick={() => history.push("/sentimentrec")}
+          onClick={() => history.push("/sentiment")}
         >
           Text Sentiment Recommendation
         </button>
-        <button
-          className="optionButton"
-          onClick={() => history.push("/emojirec")}
-        >
+        <button className="optionButton" onClick={() => history.push("/emoji")}>
           Emoji Recommendation
         </button>
       </div>

@@ -79,11 +79,26 @@ export default function MainRecommendation({
       document.getElementById(current.id).muted = true;
       document.getElementById(current.id).pause();
     }
+
+    let seedArtist = [];
+    let seedTrack = [];
+
+    if (topTracks.length >= 2 && topArtists.length >= 3) {
+      seedTrack = topTracks.slice(0, 2).map((track) => track.id);
+      seedArtist = topArtists.slice(0, 3).map((artist) => artist.id);
+    } else {
+      if (topArtists.length > topTracks.length) {
+        seedArtist = topArtists.slice(0, 5).map((artist) => artist.id);
+      } else {
+        seedTrack = topTracks.slice(0, 5).map((track) => track.id);
+      }
+    }
+
     spotifyApi
       .getRecommendations({
         market: user.country,
-        seed_artists: topArtists.slice(0, 3).map((artist) => artist.id),
-        seed_tracks: topTracks.slice(0, 2).map((track) => track.id),
+        seed_artists: seedArtist,
+        seed_tracks: seedTrack,
         limit: 1,
         min_acousticness: acousticness[0] / 100,
         max_acousticness: acousticness[1] / 100,
@@ -124,12 +139,21 @@ export default function MainRecommendation({
               });
             });
         }
+      })
+      .catch((error) => {
+        console.log(error);
+        history.push("/login");
       });
   };
 
   const saveTrack = () => {
     console.log("saved");
-    spotifyApi.addToMySavedTracks({ ids: [current.id] });
+
+    try {
+      spotifyApi.addToMySavedTracks({ ids: [current.id] });
+    } catch (error) {
+      history.push("/login");
+    }
     getRecommendation();
   };
 
@@ -457,13 +481,13 @@ export default function MainRecommendation({
             <div className="navButtons">
               <button
                 className="optionButton"
-                onClick={() => history.push("/emojirec")}
+                onClick={() => history.push("/emoji")}
               >
                 Emoji Recommendation
               </button>
               <button
                 className="optionButton"
-                onClick={() => history.push("/sentimentrec")}
+                onClick={() => history.push("/sentiment")}
               >
                 Text Sentiment Analysis Recommendation
               </button>
