@@ -16,8 +16,8 @@ const enhancedReducer = persistReducer(persistConfig, reducer);
 
 const store = createStore(
   enhancedReducer,
-  // applyMiddleware(thunk, routerMiddleware(history))
-  composeWithDevTools(applyMiddleware(thunk, routerMiddleware(history)))
+  applyMiddleware(thunk, routerMiddleware(history))
+  // composeWithDevTools(applyMiddleware(thunk, routerMiddleware(history)))
 );
 
 export default store;
