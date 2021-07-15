@@ -103,7 +103,7 @@ export default function SentimentRecommendation() {
 
     axios
       .post(
-        "http://localhost:8080/api",
+        "https://serene-escarpment-06445.herokuapp.com/api",
         {
           text: document.querySelector(".inputText").value,
         },
@@ -193,7 +193,7 @@ export default function SentimentRecommendation() {
         console.log(error);
         history.push("/login");
       });
-  }, 750);
+  }, 500);
   const getRecommendation = () => {
     const el = document.querySelector(".inputText");
     let user_input = el.value;
