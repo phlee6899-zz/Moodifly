@@ -102,7 +102,7 @@ export default function AverageChart({
         pointLabels: {
           color: "#FFF",
           font: {
-            size: 15,
+            size: 13,
           },
         },
       },
