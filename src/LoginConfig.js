@@ -1,4 +1,6 @@
-const redirectUri = "https://www.moodifly.com";
+const redirectUri = "https://www.moodifly.com/redirect";
+
+// "https://www.moodifly.com";
 
 // "http://localhost:3001/redirect";
 
