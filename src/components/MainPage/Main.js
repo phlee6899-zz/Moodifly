@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
-import history from "../history";
+import history from "../../history";
 import { useEffect, useState } from "react";
-import TrackGridContainer from "../containers/TrackGridContainer";
-import AverageChartContainer from "../containers/AverageChartContainer";
+import TrackGridContainer from "../../containers/TrackGridContainer";
+import AverageChartContainer from "../../containers/AverageChartContainer";
 import "./Main.css";
-import spotifyApi from "../Spotify";
-import Navbar from "./Navbar";
-import NewSelectionContainer from "../containers/NewSelectionContainer";
+import spotifyApi from "../../Spotify";
+import Navbar from "../NavBar/Navbar";
+import NewSelectionContainer from "../../containers/NewSelectionContainer";
 
 export default function Main() {
   const token = useSelector((state) => {

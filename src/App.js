@@ -1,10 +1,10 @@
 import "./App.css";
 import React from "react";
-import Login from "./components/Login";
-import Main from "./components/Main";
-import MainRecommendation from "./components/MainRecommendation";
-import EmojiRecommendation from "./components/EmojiRecommendation";
-import SentimentRecommendation from "./components/SentimentRecommendation";
+import Login from "./components/LoginPage/Login";
+import Main from "./components/MainPage/Main";
+import MainRecommendation from "./components/ListeningHistory/MainRecommendation";
+import EmojiRecommendation from "./components/Emoji/EmojiRecommendation";
+import SentimentRecommendation from "./components/TextSentiment/SentimentRecommendation";
 import { Router, Route } from "react-router-dom";
 import SpotifyLogin from "./components/SpotifyLogin";
 import history from "./history";

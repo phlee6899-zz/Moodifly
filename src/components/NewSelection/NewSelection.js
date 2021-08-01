@@ -1,7 +1,7 @@
-import spotifyApi from "../Spotify";
-import history from "../history";
+import spotifyApi from "../../Spotify";
+import history from "../../history";
 import { useSelector, useDispatch } from "react-redux";
-import { addTopArtists } from "../redux/action";
+import { addTopArtists } from "../../redux/action";
 import "./NewSelection.css";
 import { useState, useEffect, useCallback } from "react";
 import { unionBy } from "lodash";

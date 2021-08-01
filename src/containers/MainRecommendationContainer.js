@@ -1,4 +1,4 @@
-import MainRecommendation from "../components/MainRecommendation";
+import MainRecommendation from "../components/ListeningHistory/MainRecommendation";
 import { useSelector } from "react-redux";
 
 export default function MainRecommendationContainer() {

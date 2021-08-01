@@ -1,14 +1,14 @@
-import spotifyApi from "../Spotify";
-import history from "../history";
+import spotifyApi from "../../Spotify";
+import history from "../../history";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Radar } from "react-chartjs-2";
-import NavBar from "./Navbar";
+import NavBar from "../NavBar/Navbar";
 import "rc-slider/assets/index.css";
 import "./EmojiRecommendation.css";
 import ScrollText from "react-scroll-text";
 import { sampleSize, shuffle } from "lodash";
-import { fullData, randomize } from "../data";
+import { fullData, randomize } from "../../data";
 
 export default function EmojiRecommendation() {
   const [features, setFeatures] = useState({});
@@ -506,11 +506,6 @@ export default function EmojiRecommendation() {
                   </button>
                 </a>
               </div>
-              {/* {current.playing ? (
-                          <PauseButton onButtonClick={handleClick} />
-                        ) : (
-                          <PlayButton onButtonClick={handleClick} />
-                        )} */}
             </div>
           </div>
         )}

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import TrackGrid from "../components/TrackGrid";
+import TrackGrid from "../components/MainPage/TrackGrid";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getTopTracksThunk,

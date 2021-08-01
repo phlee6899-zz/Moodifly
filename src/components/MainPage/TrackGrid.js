@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCurrentSongThunk } from "../redux/action";
-import MyLoader from "./ContentLoader";
+import { getCurrentSongThunk } from "../../redux/action";
 import "./TrackGrid.css";
-import { PlayButton, PauseButton } from "./PlayButton";
-import history from "../history";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ScrollText from "react-scroll-text";
 import "swiper/swiper.min.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
-import spotifyApi from "../Spotify";
+import spotifyApi from "../../Spotify";
 
 import SwiperCore, {
   Navigation,

@@ -97,18 +97,18 @@
   margin: auto;
   width: 150px;
   height: 150px;
-  background: url("../media/PlayButton.png") no-repeat scroll center center /
+  background: url("../../media/PlayButton.png") no-repeat scroll center center /
     50px 50px;
   pointer-events: none;
 }
 
 .TrackGridContainer .carouselContainer .playButton.playing {
-  background: url("../media/PauseButton.png") no-repeat scroll center center /
+  background: url("../../media/PauseButton.png") no-repeat scroll center center /
     50px 50px;
 }
 
 .TrackGridContainer .carouselContainer .playButton.playing:hover {
-  background: url("../media/PauseButton.png") no-repeat scroll center center /
+  background: url("../../media/PauseButton.png") no-repeat scroll center center /
     50px 50px;
 }
 

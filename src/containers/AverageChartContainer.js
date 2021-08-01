@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import spotifyApi from "../Spotify";
-import AverageChart from "../components/AverageChart";
+import AverageChart from "../components/MainPage/AverageChart";
 import { useDispatch, useSelector } from "react-redux";
 import { getTopTracksThunk } from "../redux/action";
 import { withTheme } from "styled-components";

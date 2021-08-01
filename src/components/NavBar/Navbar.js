@@ -1,9 +1,9 @@
-import history from "../history";
+import history from "../../history";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToken } from "../redux/action";
+import { addToken } from "../../redux/action";
 import "./Navbar.css";
-import spotifyApi from "../Spotify";
+import spotifyApi from "../../Spotify";
 
 export default function Navbar() {
   const [title, setTitle] = useState("");

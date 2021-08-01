@@ -1,9 +1,9 @@
-import spotifyApi from "../Spotify";
-import history from "../history";
+import spotifyApi from "../../Spotify";
+import history from "../../history";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Radar, Doughnut } from "react-chartjs-2";
-import NavBar from "./Navbar";
+import NavBar from "../NavBar/Navbar";
 import "rc-slider/assets/index.css";
 import "./SentimentRecommendation.css";
 import ScrollText from "react-scroll-text";
@@ -453,11 +453,6 @@ export default function SentimentRecommendation() {
                   </button>
                 </a>
               </div>
-              {/* {current.playing ? (
-                          <PauseButton onButtonClick={handleClick} />
-                        ) : (
-                          <PlayButton onButtonClick={handleClick} />
-                        )} */}
             </div>
           </div>
         )}

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Radar } from "react-chartjs-2";
-import MyLoader from "./ContentLoader";
-import history from "../history";
+import history from "../../history";
 import "./AverageChart.css";
 
 export default function AverageChart({

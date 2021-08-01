@@ -1,4 +1,4 @@
-import { authUrl } from "../LoginConfig";
+import { authUrl } from "../../LoginConfig";
 import "./Login.css";
 import TextLoop from "react-text-loop";
 // import video from "../media/Background.mp4";

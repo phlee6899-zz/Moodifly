@@ -1,11 +1,10 @@
-import spotifyApi from "../Spotify";
-import history from "../history";
+import spotifyApi from "../../Spotify";
+import history from "../../history";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Radar } from "react-chartjs-2";
 import Slider, { Range } from "rc-slider";
-import NavBar from "./Navbar";
-import { PlayButton, PauseButton } from "./PlayButton";
+import NavBar from "../NavBar/Navbar";
 import "rc-slider/assets/index.css";
 import "./MainRecommendation.css";
 import ScrollText from "react-scroll-text";
@@ -337,11 +336,6 @@ export default function MainRecommendation({
                   </button>
                 </a>
               </div>
-              {/* {current.playing ? (
-                <PauseButton onButtonClick={handleClick} />
-              ) : (
-                <PlayButton onButtonClick={handleClick} />
-              )} */}
             </div>
           </div>
           {/* Slider Container */}

@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountryPlaylistThunk } from "../redux/action";
 import spotifyApi from "../Spotify";
-import NewSelection from "../components/NewSelection";
+import NewSelection from "../components/NewSelection/NewSelection";
 
 export default function NewSelectionContainer() {
   const dispatch = useDispatch();
