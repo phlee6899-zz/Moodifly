@@ -1,14 +1,15 @@
 /* .mcontainer .mainContainer .currentSongContainer .styleButton */
 .styledButton {
-  color: black;
+  color: white;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 800;
   border-radius: 10px;
   cursor: pointer;
   width: 100%;
   height: 50px;
   margin-bottom: 15px;
-  background-color: white;
+  border: solid 1px white;
+  background-color: transparent;
 }
 
 .mcontainer {
@@ -99,10 +100,13 @@
   .albumImage {
   width: 100%;
   height: 100%;
+  border-radius: 7px;
+  /* border: thin solid white; */
 }
 
 .mcontainer .mainContainer .sliderContainer {
-  background-color: #62758f;
+  background-color: #e9717f;
+  /* background-color: #ee8995; */
   padding: 30px;
   height: 60%;
   margin-right: 30px;
@@ -115,6 +119,19 @@
   flex-direction: column;
 }
 
+.mcontainer .mainContainer .sliderContainer .sliders #reset {
+  margin-top: 10px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 80%;
+  font-weight: 700;
+  color: white;
+  font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
 .rc-slider-handle {
   border-color: white;
   background-color: white;
@@ -125,7 +142,7 @@
 }
 
 .rc-slider-dot-active {
-  border-color: rgb(95, 95, 95);
+  border-color: black;
 }
 
 .mcontainer .mainContainer .sliderContainer .descContainer {
@@ -161,7 +178,8 @@
 }
 
 .mcontainer .mainContainer .radarContainer {
-  background-color: #62758f;
+  background-color: #3e9e73;
+  /* background-color: #62758f; */
   padding: 30px;
   /* height: 60%; */
   margin-right: 30px;
@@ -195,7 +213,7 @@
 }
 
 .mcontainer .mainContainer .radarContainer .navButtons .optionButton {
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: 700;
   border-radius: 10px;
@@ -203,5 +221,6 @@
   width: 300px;
   height: 50px;
   margin-bottom: 15px;
-  background-color: #fff;
+  border: 1px solid white;
+  background-color: transparent;
 }

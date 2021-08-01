@@ -1,11 +1,14 @@
 .AverageChartContainer {
   /* background-color: #f1faee; */
-  margin-top: 25px;
+  margin-top: 16px;
   padding: 30px;
   height: 100%;
   box-sizing: border-box;
-  /* border-top-left-radius: 30px; */
-  transform: scale(0.9);
+  background-color: #151515;
+  border-left: 0.5px solid white;
+  border-top: 0.5px solid white;
+  border-top-left-radius: 30px;
+  transform: scale(0.95);
 }
 
 .AverageChartContainer .radarChart {
@@ -27,13 +30,14 @@
 }
 
 .AverageChartContainer .recOptions .optionButton {
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: 700;
   border-radius: 10px;
   cursor: pointer;
   width: 300px;
   height: 50px;
-  margin-bottom: 15px;
-  background-color: white;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 1px solid white;
 }

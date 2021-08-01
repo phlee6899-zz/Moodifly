@@ -390,7 +390,7 @@ export default function EmojiRecommendation() {
       <div className="mainContainer">
         {/* textContainer */}
         <div className="emojiContainer">
-          <p className="textDesc">Select Emoji</p>
+          <p className="textDesc">Select Emojis</p>
           <div className="emojiBox">
             {emojiList.map((emoji, ind) => {
               return (

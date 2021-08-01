@@ -1,13 +1,14 @@
 .styleButton {
-  color: black;
+  color: white;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 800;
   border-radius: 10px;
   cursor: pointer;
   width: 100%;
   height: 50px;
   margin-bottom: 15px;
-  background-color: white;
+  border: solid 1px white;
+  background-color: transparent;
 }
 
 .container {
@@ -32,7 +33,7 @@
 }
 
 .container .mainContainer .textContainer {
-  background-color: #1d3557;
+  background-color: #e9717f;
   padding: 30px;
   height: 530px;
   margin-right: 30px;
@@ -91,7 +92,7 @@
 }
 
 .container .mainContainer .currentSongContainer {
-  background-color: #62758f;
+  background-color: #1d3557;
   padding: 30px;
   height: 530px;
   margin-right: 30px;
@@ -169,6 +170,8 @@
   .albumImage {
   width: 100%;
   height: 100%;
+  border-radius: 7px;
+  /* border: thin solid white; */
 }
 
 .radar {
@@ -206,7 +209,7 @@
 }
 
 .container .mainContainer .radarContainer .navButtons .optionButton {
-  color: black;
+  color: white;
   font-size: 16px;
   font-weight: 700;
   border-radius: 10px;
@@ -214,5 +217,6 @@
   width: 300px;
   height: 50px;
   margin-bottom: 15px;
-  background-color: white;
+  background-color: transparent;
+  border: 1px solid white;
 }

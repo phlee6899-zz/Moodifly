@@ -30,7 +30,7 @@ export default function Navbar() {
       case "emojiLabel":
         setTitle("Emoji Based Recommendation");
         setContent(
-          "Now, more emojis are used than ever before and we recognize emoji's crucial role in filling the emotional cues missing from our typed conversations. On Moodifly, users can select a single emoji or a chain of emojis for a personalized recommendation based on the sentiment of the selection."
+          "Now, more emojis are used than ever before and we recognize emoji's crucial role in filling the emotional cues missing from our typed conversations. On Moodifly, users can select a single emoji or a chain of emojis for a personalized recommendation."
         );
         break;
     }

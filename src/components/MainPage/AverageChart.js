@@ -117,8 +117,8 @@ export default function AverageChart({
           <div className="radarChart">
             <Radar
               className={"radarCh"}
-              height={420}
-              width={420}
+              height={370}
+              width={370}
               data={list}
               options={options}
             />
@@ -131,8 +131,8 @@ export default function AverageChart({
           <div className="radarChart">
             <Radar
               className={"radarCh"}
-              height={420}
-              width={420}
+              height={370}
+              width={370}
               data={countryList}
               options={countryOptions}
             />

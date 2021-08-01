@@ -45,7 +45,7 @@
   position: absolute;
   width: 200px;
   z-index: 3;
-  top: 225px;
+  top: 200px;
   left: 50px;
   font-size: 50px;
   line-height: 1.4;
@@ -60,7 +60,7 @@
   width: 100%;
   justify-content: center;
   /* background-color: orange; */
-  bottom: 110px;
+  bottom: 90px;
 }
 
 .buttonContainer .icon {
@@ -78,6 +78,8 @@
   align-items: center;
   border-radius: 400px;
   padding: 18px 40px 14px;
+  font-family: "Teko", sans-serif;
+  font-weight: 900;
   /* color: white;
   font-weight: 420; */
   background-color: #1db954;
@@ -88,7 +90,7 @@
   color: white;
   font-weight: 420;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 25px;
   line-height: 1.2;
   margin-left: 12px;
 }
