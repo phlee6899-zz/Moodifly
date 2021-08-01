@@ -63,15 +63,15 @@ export default function TrackGrid({
       topTracks.length === 0 &&
       !countryPlaylist
     ) {
-      console.log("TRACKGRID ARTIST");
+      // console.log("TRACKGRID ARTIST");
       getCountryPlaylist(user.user.country);
     }
   }, [topTracks]);
 
   useEffect(() => {
-    console.log("here");
+    // console.log("here");
     if (topArtists === undefined) {
-      console.log("in");
+      // console.log("in");
       getTopArtists();
     }
   }, []);
@@ -249,7 +249,7 @@ export default function TrackGrid({
                             playing: true,
                             artists: each_item.artists,
                           });
-                          console.log(current.name);
+                          // console.log(current.name);
                           document.getElementById(ind).muted = false;
                           document.getElementById(ind).play();
                         }

@@ -1,4 +1,6 @@
-const redirectUri = "https://flamboyant-bhaskara-082736.netlify.app/redirect";
+const redirectUri = "http://localhost:3001/redirect";
+
+// "https://flamboyant-bhaskara-082736.netlify.app/redirect";
 
 // "http://localhost:3000/redirect";
 

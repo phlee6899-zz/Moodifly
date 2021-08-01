@@ -23,7 +23,7 @@ export const LOADING_FAILED_CURRENTSONG = "LOADING_FAILED_CURRENTSONG";
 export const ADD_TOPARTISTS = "ADD_TOPARTISTS";
 
 export function addTopArtists(artists) {
-  console.log(artists);
+  // console.log(artists);
   return {
     type: ADD_TOPARTISTS,
     data: artists,
@@ -285,7 +285,7 @@ export function getCountryPlaylistThunk(countryCode) {
       });
 
       async function artistHelper(id) {
-        console.log("GET ARTIST");
+        // console.log("GET ARTIST");
         return new Promise((resolve) => {
           spotifyApi.getArtist(id).then((artistInfo) => {
             if (artistInfo.images.length !== 0) {

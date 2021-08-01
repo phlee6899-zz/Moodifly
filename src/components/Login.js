@@ -1,7 +1,7 @@
 import { authUrl } from "../LoginConfig";
 import "./Login.css";
 import TextLoop from "react-text-loop";
-import video from "../media/Background.mp4";
+// import video from "../media/Background.mp4";
 
 export default function Login() {
   return (
@@ -12,22 +12,25 @@ export default function Login() {
         </div>
         <div className="textLoop">
           Music Tailored From
-          <TextLoop>
-            <span>Sentiment Analysis</span>
+          <TextLoop interval={2000}>
             <span>Emojis</span>
+            <span>Sentiment Analysis</span>
             <span>Listening History</span>
           </TextLoop>{" "}
         </div>
       </div>
       <div className="buttonContainer">
-        <a href={authUrl}>LOGIN WITH SPOTIFY</a>
+        <a href={authUrl}>
+          <img className="icon" src="/media/spotify-icon.png"></img>
+          <p>LOGIN WITH SPOTIFY</p>
+        </a>
       </div>
-      <div className="LoginContainer">
+      {/* <div className="LoginContainer">
         <div className="backgroundCover"></div>
         <video className="background" autoPlay loop muted>
           <source src={video} type="video/mp4" />
         </video>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,6 +1,21 @@
 .Container {
   position: relative;
   height: 100vh;
+  background: #003353;
+  background: -webkit-linear-gradient(to right, #003353, #c9c9c9);
+  background: linear-gradient(to right, #003353, #c9c9c9);
+
+  /* background: #536976;
+  background: -webkit-linear-gradient(
+    to right,
+    #292e49,
+    #536976
+  ); 
+  background: linear-gradient(
+    to right,
+    #292e49,
+    #536976
+  ); */
 }
 
 .Container.Login .loginMain {
@@ -14,7 +29,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   width: 300px;
-  top: 60px;
+  top: 65px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -30,7 +45,7 @@
   position: absolute;
   width: 200px;
   z-index: 3;
-  top: 200px;
+  top: 225px;
   left: 50px;
   font-size: 50px;
   line-height: 1.4;
@@ -45,17 +60,37 @@
   width: 100%;
   justify-content: center;
   /* background-color: orange; */
-  bottom: 80px;
+  bottom: 110px;
+}
+
+.buttonContainer .icon {
+  width: 32px;
+  height: 32px;
+  display: inline;
 }
 
 .buttonContainer a {
+  /* text-decoration: none;
+  font-size: 17px;
+  line-height: 1.2; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 400px;
+  padding: 18px 40px 14px;
+  /* color: white;
+  font-weight: 420; */
+  background-color: #1db954;
+  text-decoration: none;
+}
+
+.buttonContainer a p {
+  color: white;
+  font-weight: 420;
   text-decoration: none;
   font-size: 17px;
   line-height: 1.2;
-  border-radius: 400px;
-  padding: 18px 45px 14px;
-  color: white;
-  background-color: #1db954;
+  margin-left: 12px;
 }
 
 .buttonContainer a:hover {
@@ -79,7 +114,7 @@
   overflow: hidden;
 }
 
-.LoginContainer .background {
+/* .LoginContainer .background {
   filter: grayscale(100%);
   margin-top: -60px;
-}
+} */

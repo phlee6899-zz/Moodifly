@@ -18,19 +18,19 @@ export default function Navbar() {
       case "historyLabel":
         setTitle("Listening History Based Recommendation");
         setContent(
-          "We know how much you love your favorite artists and tracks. On Moodify, we recommend personalized music based on your music taste. You can also use our slider feature that allows you to filter the recommendation based on values like energy and danceability."
+          "We know how much you love your favorite artists and tracks. On Moodifly, we recommend personalized music based on your music taste. You can also use our slider feature that allows you to filter the recommendation based on values like energy and danceability."
         );
         break;
       case "textLabel":
         setTitle("Text Sentiment Based Recommendation");
         setContent(
-          "No matter what your mood is we will be there for you. Write down your thoughts, feelings, or whatever that is going through your head. Moodify will recommend a song that you want to hear right at this moment using our real-time text sentiment analyis."
+          "No matter what your mood is we will be there for you. Write down your thoughts, feelings, or whatever that is going through your head. Moodifly will recommend a song that you want to hear right at this moment using our real-time text sentiment analyis."
         );
         break;
       case "emojiLabel":
         setTitle("Emoji Based Recommendation");
         setContent(
-          "Now, more emojis are used than ever before and we recognize emoji's crucial role in filling the emotional cues missing from our typed conversations. On Moodify, users can select a single emoji or a chain of emojis for a personalized recommendation based on the sentiment of the selection."
+          "Now, more emojis are used than ever before and we recognize emoji's crucial role in filling the emotional cues missing from our typed conversations. On Moodifly, users can select a single emoji or a chain of emojis for a personalized recommendation based on the sentiment of the selection."
         );
         break;
     }
@@ -100,7 +100,7 @@ export default function Navbar() {
             {user && !user.images[0] && (
               <img
                 style={{
-                  width: "45px",
+                  width: "40px",
                   borderRadius: "50%",
                   marginRight: "10px",
                 }}

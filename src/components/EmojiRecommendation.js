@@ -264,7 +264,7 @@ export default function EmojiRecommendation() {
   };
 
   const saveTrack = () => {
-    console.log("saved");
+    // console.log("saved");
     try {
       spotifyApi.addToMySavedTracks({ ids: [current.id] });
     } catch (error) {
@@ -517,12 +517,12 @@ export default function EmojiRecommendation() {
         {/* Radar Container */}
         {current.name && (
           <div className="radarContainer">
-            <h1 className="chartTitle">Current Track Analysis</h1>
+            <h1 className="chartTitle">Track Analytics</h1>
             <div className="chartContainer">
               <Radar
                 className={"radar"}
                 height={300}
-                width={300}
+                width={400}
                 data={dataContent}
                 options={option}
               />

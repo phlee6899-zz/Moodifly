@@ -203,7 +203,7 @@ export default function SentimentRecommendation() {
   };
 
   const saveTrack = () => {
-    console.log("saved");
+    // console.log("saved");
 
     try {
       spotifyApi.addToMySavedTracks({ ids: [current.id] });
@@ -464,7 +464,7 @@ export default function SentimentRecommendation() {
         {/* Radar Container */}
         {current.name && (
           <div className="radarContainer">
-            <h1 className="chartTitle">Current Track Analysis</h1>
+            <h1 className="chartTitle">Track Analytics</h1>
             <div className="chartContainer">
               <Radar
                 className={"radar"}

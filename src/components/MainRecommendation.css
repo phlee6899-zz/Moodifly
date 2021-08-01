@@ -1,6 +1,6 @@
-/* .container .mainContainer .currentSongContainer .styleButton */
-.styleButton {
-  color: #f1faee;
+/* .mcontainer .mainContainer .currentSongContainer .styleButton */
+.styledButton {
+  color: black;
   font-size: 16px;
   font-weight: 700;
   border-radius: 10px;
@@ -8,12 +8,12 @@
   width: 100%;
   height: 50px;
   margin-bottom: 15px;
-  background-color: #1d3557;
+  background-color: white;
 }
 
-.container {
+.mcontainer {
   padding-top: 70px;
-  background-color: #f1faee;
+  background-color: #e0e1dd;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,64 +21,69 @@
   box-sizing: border-box;
 }
 
-.container .mainContainer {
+.mcontainer .mainContainer {
   max-width: 90%;
   width: 90%;
-  background-color: #f1faee;
+  background-color: #e0e1dd;
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
+  transform: scale(0.93);
 }
 
-.container .mainContainer .currentSongContainer {
-  background-color: #e63946;
+.mcontainer .mainContainer .currentSongContainer {
+  background-color: #1d3557;
   padding: 30px;
   height: 530px;
   margin-right: 30px;
   border-top-right-radius: 50px;
-  width: 280px;
+  width: 300px;
   min-width: 280px;
   min-height: 530px;
 }
 
-.container .mainContainer .currentSongContainer .songTitle {
+.mcontainer .mainContainer .currentSongContainer .songTitle {
   font-size: 30px;
   line-height: 1.4;
-  color: #f1faee;
+  color: white;
   font-weight: 900;
   word-wrap: break-word;
   text-overflow: ellipsis;
 }
 
-.container .mainContainer .currentSongContainer .artistName {
+.mcontainer .mainContainer .currentSongContainer .artistName {
   font-size: 21px;
   line-height: 1.4;
   display: flex;
   align-items: center;
-  color: #f1faee;
+  color: white;
   padding-bottom: 10px;
   font: 700;
 }
 
-.container .mainContainer .currentSongContainer .saveContainer {
+.mcontainer .mainContainer .currentSongContainer .saveContainer {
   right: 0px;
 }
 
-.container .mainContainer .currentSongContainer .saveContainer .material-icons {
+.mcontainer
+  .mainContainer
+  .currentSongContainer
+  .saveContainer
+  .material-icons {
   box-sizing: border-box;
-  color: #61605f;
+  color: white;
   font-size: 37px;
   padding-top: 7px;
   cursor: pointer;
 }
 
-.container .mainContainer .currentSongContainer .albumImageContainer {
+.mcontainer .mainContainer .currentSongContainer .albumImageContainer {
   margin-bottom: 15px;
 }
 
-.container .mainContainer .currentSongContainer .albumImageContainer {
+.mcontainer .mainContainer .currentSongContainer .albumImageContainer {
   width: 300px;
   height: 300px;
   position: relative;
@@ -87,7 +92,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.container
+.mcontainer
   .mainContainer
   .currentSongContainer
   .albumImageContainer
@@ -96,8 +101,8 @@
   height: 100%;
 }
 
-.container .mainContainer .sliderContainer {
-  background-color: #00498c;
+.mcontainer .mainContainer .sliderContainer {
+  background-color: #62758f;
   padding: 30px;
   height: 60%;
   margin-right: 30px;
@@ -123,31 +128,31 @@
   border-color: rgb(95, 95, 95);
 }
 
-.container .mainContainer .sliderContainer .descContainer {
+.mcontainer .mainContainer .sliderContainer .descContainer {
   margin-bottom: 30px;
   width: 100%;
 }
 
-.container .mainContainer .sliderContainer .descContainer p {
+.mcontainer .mainContainer .sliderContainer .descContainer p {
   font-size: 30px;
   line-height: 1.4;
-  color: #f1faee;
+  color: white;
   font-weight: 900;
 }
 
-.container .mainContainer .sliderContainer .slider {
+.mcontainer .mainContainer .sliderContainer .slider {
   width: 280px;
   margin-top: 20px;
   margin-bottom: 27px;
 }
 
-.container .mainContainer .sliderContainer .slider .range {
+.mcontainer .mainContainer .sliderContainer .slider .range {
   margin-top: 10px;
   color: white;
   float: right;
 }
 
-.container .mainContainer .sliderContainer .slider .desc {
+.mcontainer .mainContainer .sliderContainer .slider .desc {
   font-size: 17px;
   font-weight: 500;
   line-height: 1.4;
@@ -155,8 +160,8 @@
   padding-bottom: 10px;
 }
 
-.container .mainContainer .radarContainer {
-  background-color: #00498c;
+.mcontainer .mainContainer .radarContainer {
+  background-color: #62758f;
   padding: 30px;
   /* height: 60%; */
   margin-right: 30px;
@@ -169,23 +174,28 @@
   flex-direction: column;
 }
 
-.container .mainContainer .radarContainer .chartTitle {
-  font-size: 30px;
-  line-height: 1.4;
-  color: #f1faee;
-  font-weight: 900;
-  width: 100%;
+.radar {
+  margin-top: 20px;
 }
 
-.container .mainContainer .radarContainer .navButtons {
+.mcontainer .mainContainer .radarContainer .chartTitle {
+  font-size: 30px;
+  line-height: 1.4;
+  color: white;
+  font-weight: 900;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mcontainer .mainContainer .radarContainer .navButtons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
-.container .mainContainer .radarContainer .navButtons .optionButton {
-  color: #f1faee;
+.mcontainer .mainContainer .radarContainer .navButtons .optionButton {
+  color: black;
   font-size: 16px;
   font-weight: 700;
   border-radius: 10px;
@@ -193,5 +203,5 @@
   width: 300px;
   height: 50px;
   margin-bottom: 15px;
-  background-color: #1d3557;
+  background-color: #fff;
 }

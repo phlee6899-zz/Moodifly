@@ -56,12 +56,12 @@ export default function AverageChartContainer() {
       "Acousticness",
       "Danceability",
       "Energy",
-      "Instrumentalness",
+      "Instrumental",
       "Valence",
     ],
     datasets: [
       {
-        label: "Your Music Analysis",
+        label: "Your Music Analytics",
         data: [],
         backgroundColor: "rgba(54, 162, 235, 0.2)",
         borderColor: "rgb(54, 162, 235)",
@@ -75,7 +75,7 @@ export default function AverageChartContainer() {
         borderWidth: 3,
       },
       {
-        label: "Current Track Analysis",
+        label: "Current Track Analytics",
         data: [],
         fill: true,
         backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -96,12 +96,12 @@ export default function AverageChartContainer() {
       "Acousticness",
       "Danceability",
       "Energy",
-      "Instrumentalness",
+      "Instrumental",
       "Valence",
     ],
     datasets: [
       {
-        label: "Current Track Analysis",
+        label: "Current Track Analytics",
         data: [],
         backgroundColor: "rgba(54, 162, 235, 0.2)",
         borderColor: "rgb(54, 162, 235)",

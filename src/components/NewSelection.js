@@ -50,7 +50,7 @@ export default function NewSelection({
         (each_artist.selected && each_artist.id !== id)
       );
     });
-    console.log(updateList);
+    // console.log(updateList);
     setArtistList([...updateList]);
   };
 
@@ -78,7 +78,7 @@ export default function NewSelection({
           .filter((each_info) => {
             return each_info !== undefined;
           });
-        console.log(final);
+        // console.log(final);
         setArtistList([...final]);
         // console.log(artistList);
       })

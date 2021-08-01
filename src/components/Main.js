@@ -42,7 +42,7 @@ export default function Main() {
         }
       })
       .catch((error) => {
-        console.log("ERROR");
+        // console.log("ERROR");
         console.log(error);
       });
 

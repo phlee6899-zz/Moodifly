@@ -1,9 +1,9 @@
 .mainContainer .contentContainer {
   display: flex;
   height: 100vh;
-  padding-top: 70px;
+  padding-top: 45px;
   box-sizing: border-box;
-  background-color: black;
+  background-color: #000;
 }
 
 .mainContainer .pickContainer {

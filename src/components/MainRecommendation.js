@@ -147,7 +147,7 @@ export default function MainRecommendation({
   };
 
   const saveTrack = () => {
-    console.log("saved");
+    // console.log("saved");
 
     try {
       spotifyApi.addToMySavedTracks({ ids: [current.id] });
@@ -290,7 +290,7 @@ export default function MainRecommendation({
   };
 
   return (
-    <div className="container">
+    <div className="mcontainer">
       {/* Header */}
       <NavBar />
       {current.name && (
@@ -320,11 +320,11 @@ export default function MainRecommendation({
               {current.preview && (
                 <div className="previewContainer" onClick={handleClick}>
                   {current.playing ? (
-                    <button className="previewButton styleButton">
+                    <button className="previewButton styledButton">
                       Pause Preview
                     </button>
                   ) : (
-                    <button className="previewButton styleButton">
+                    <button className="previewButton styledButton">
                       Play Preview
                     </button>
                   )}
@@ -332,7 +332,7 @@ export default function MainRecommendation({
               )}
               <div className="fullSongContainer">
                 <a href={current.fullLink} target="_blank">
-                  <button className="fullSongButton styleButton">
+                  <button className="fullSongButton styledButton">
                     Full Song
                   </button>
                 </a>
@@ -363,8 +363,8 @@ export default function MainRecommendation({
                     marks={marks}
                     value={acousticness}
                     defaultValue={[0, 100]}
-                    trackStyle={{ backgroundColor: "#fff", height: 10 }}
-                    railStyle={{ backgroundColor: "#6e6e6e", height: 10 }}
+                    trackStyle={[{ backgroundColor: "#fff" }]}
+                    railStyle={{ backgroundColor: "#6e6e6e" }}
                     allowCross={false}
                     onChange={(value) => setAcousticness(value)}
                     onAfterChange={getRecommendation}
@@ -384,7 +384,7 @@ export default function MainRecommendation({
                     marks={marks}
                     value={danceability}
                     defaultValue={[0, 100]}
-                    trackStyle={[{ backgroundColor: "red" }]}
+                    trackStyle={[{ backgroundColor: "#fff" }]}
                     railStyle={{ backgroundColor: "#6e6e6e" }}
                     allowCross={false}
                     onChange={(value) => setDanceability(value)}
@@ -468,7 +468,7 @@ export default function MainRecommendation({
           </div>
           {/* Radar Container */}
           <div className="radarContainer">
-            <h1 className="chartTitle">Current Track Analysis</h1>
+            <h1 className="chartTitle">Track Analytics</h1>
             <div className="chartContainer">
               <Radar
                 className={"radar"}
