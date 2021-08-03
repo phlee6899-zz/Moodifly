@@ -47,6 +47,7 @@
   position: absolute;
 }
 .TrackGridContainer .carouselContainer .swiper-container {
+  margin-top: 65px;
   width: 1000px;
   padding-bottom: 70px;
 }
@@ -159,7 +160,7 @@
   color: white;
   position: absolute;
   top: 60px;
-  left: 40px;
+  left: 50px;
 }
 
 .infoContainer .songInfoContainer .songName {

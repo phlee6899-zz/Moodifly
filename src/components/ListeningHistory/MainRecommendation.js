@@ -302,7 +302,11 @@ export default function MainRecommendation({
             <div className="artistName">
               <ScrollText speed={80}>{formatArtistName()}</ScrollText>
               <div className="saveContainer">
-                <div className="material-icons" onClick={saveTrack}>
+                <div
+                  title="Save Track"
+                  className="material-icons"
+                  onClick={saveTrack}
+                >
                   add
                 </div>
               </div>
@@ -483,7 +487,7 @@ export default function MainRecommendation({
                 className="optionButton"
                 onClick={() => history.push("/sentiment")}
               >
-                Text Sentiment Analysis Recommendation
+                Sentiment Analysis Recommendation
               </button>
             </div>
           </div>

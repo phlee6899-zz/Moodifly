@@ -105,7 +105,7 @@
 }
 
 .mcontainer .mainContainer .sliderContainer {
-  background-color: #e9717f;
+  background-color: #de6a78;
   /* background-color: #ee8995; */
   padding: 30px;
   height: 60%;
@@ -160,11 +160,12 @@
 .mcontainer .mainContainer .sliderContainer .slider {
   width: 280px;
   margin-top: 20px;
-  margin-bottom: 27px;
+  margin-bottom: 30px;
 }
 
 .mcontainer .mainContainer .sliderContainer .slider .range {
-  margin-top: 10px;
+  margin-top: 4px;
+  margin-right: -3%;
   color: white;
   float: right;
 }
@@ -179,7 +180,7 @@
 
 .mcontainer .mainContainer .radarContainer {
   background-color: #3e9e73;
-  /* background-color: #62758f; */
+  /* background-color: #ad7f39; */
   padding: 30px;
   /* height: 60%; */
   margin-right: 30px;

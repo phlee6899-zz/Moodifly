@@ -33,7 +33,7 @@
 }
 
 .container .mainContainer .textContainer {
-  background-color: #e9717f;
+  background-color: #1d3557;
   padding: 30px;
   height: 530px;
   margin-right: 30px;
@@ -92,7 +92,7 @@
 }
 
 .container .mainContainer .currentSongContainer {
-  background-color: #1d3557;
+  background-color: #e9717f;
   padding: 30px;
   height: 530px;
   margin-right: 30px;
@@ -179,7 +179,7 @@
 }
 
 .container .mainContainer .radarContainer {
-  background-color: #62758f;
+  background-color: #3e9e73;
   padding: 30px;
   /* height: 60%; */
   margin-right: 30px;

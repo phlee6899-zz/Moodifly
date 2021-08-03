@@ -34,8 +34,8 @@
 }
 
 .container .mainContainer .emojiContainer {
-  /* background-color: #1d3557; */
-  background-color: #e9717f;
+  background-color: #1d3557;
+  /* background-color: #e9717f; */
   padding: 30px;
   height: 530px;
   margin-right: 30px;
@@ -138,7 +138,7 @@
 
 .container .mainContainer .currentSongContainer {
   /* background-color: #eb818d; */
-  background-color: #1d3557;
+  background-color: #e9717f;
   padding: 30px;
   height: 530px;
   margin-right: 30px;
@@ -221,7 +221,7 @@
 }
 
 .container .mainContainer .radarContainer {
-  background-color: #00498c;
+  background-color: #3e9e73;
   padding: 30px;
   /* height: 60%; */
   margin-right: 30px;
