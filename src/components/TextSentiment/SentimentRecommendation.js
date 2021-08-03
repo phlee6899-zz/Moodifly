@@ -468,7 +468,7 @@ export default function SentimentRecommendation() {
               <Radar
                 className={"radar"}
                 height={300}
-                width={300}
+                width={320}
                 data={dataContent}
                 options={option}
               />
