@@ -466,7 +466,7 @@ export default function SentimentRecommendation() {
             <h1 className="chartTitle">Track Analytics</h1>
             <div className="chartContainer">
               <Radar
-                className={"radar"}
+                className={"radarSenti"}
                 height={300}
                 width={320}
                 data={dataContent}
