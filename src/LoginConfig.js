@@ -2,7 +2,7 @@ const redirectUri = "https://www.moodifly.com/redirect";
 
 // "http://localhost:3001/redirect";
 
-// "https://www.moodifly.com";
+// "https://www.moodifly.com/redirect";
 
 // "http://localhost:3001/redirect";
 

@@ -103,7 +103,7 @@ export default function SentimentRecommendation() {
 
     axios
       .post(
-        "https://serene-escarpment-06445.herokuapp.com/api",
+        "https://www.moodifly.com/api",
         {
           text: document.querySelector(".inputText").value,
         },
