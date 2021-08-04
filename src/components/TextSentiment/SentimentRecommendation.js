@@ -388,7 +388,7 @@ export default function SentimentRecommendation() {
           </div>
           <textarea
             className="inputText"
-            placeholder="Music Recommendation Based On Sentiment Analysis"
+            placeholder="Recommendation Based On Sentiment Analysis"
             onKeyUp={getRecommendation}
           ></textarea>
           {error && <p className="errorText">{error}</p>}
