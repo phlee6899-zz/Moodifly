@@ -50,21 +50,26 @@
   display: flex;
 }
 
-.navBar .inner .menu li {
+.navBar .inner .menu .navLabel {
   cursor: pointer;
+  margin-right: 85px;
 }
 
-.navBar .inner .menu li::after {
+.navBar .inner .menu .divide {
+  margin-right: 85px;
+}
+
+/* .navBar .inner .menu li::after {
   content: "|";
   margin-left: 60px;
   margin-right: 60px;
-}
+} */
 
-.navBar .inner .menu li:last-child::after {
+/*.navBar .inner .menu li:last-child::after {
   content: "";
-  margin-left: 0px;
+  margin-left: 30px;
   margin-right: 0px;
-}
+} */
 
 .navBar .userSection {
   margin-right: 40px;

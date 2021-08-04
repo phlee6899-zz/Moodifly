@@ -58,23 +58,25 @@ export default function Navbar() {
           <div className="menu">
             <ul>
               <li
-                className="historyLabel"
+                className="navLabel"
                 onClick={() => history.push("/history")}
                 onMouseOver={mouseoverAction}
                 onMouseLeave={mouseLeaveAction}
               >
                 History
               </li>
+              <li className="divide">|</li>
               <li
-                className="textLabel"
+                className="navLabel"
                 onClick={() => history.push("/sentiment")}
                 onMouseOver={mouseoverAction}
                 onMouseLeave={mouseLeaveAction}
               >
                 Text
               </li>
+              <li className="divide">|</li>
               <li
-                className="emojiLabel"
+                className="navLabel"
                 onClick={() => history.push("/emoji")}
                 onMouseOver={mouseoverAction}
                 onMouseLeave={mouseLeaveAction}

@@ -6,6 +6,10 @@ const redirectUri = "https://www.moodifly.com/redirect";
 
 // "http://localhost:3001/redirect";
 
+// "https://www.moodifly.com/redirect";
+
+// "http://localhost:3001/redirect";
+
 // "https://flamboyant-bhaskara-082736.netlify.app/redirect";
 
 // "http://localhost:3000/redirect";
