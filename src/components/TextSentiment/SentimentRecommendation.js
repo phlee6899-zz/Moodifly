@@ -193,7 +193,7 @@ export default function SentimentRecommendation() {
         console.log(error);
         history.push("/login");
       });
-  }, 500);
+  }, 600);
   const getRecommendation = () => {
     const el = document.querySelector(".inputText");
     let user_input = el.value;
