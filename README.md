@@ -37,4 +37,4 @@ Moodifly is composed of the frontend, which is capable of the visualization of d
 
 ## Document
 
-To read more about this project and in depth details about the features, architechture, and so on, refer to this [PDF](https://link-url-here.org).
+To read more about this project and in depth details about the features, architechture, and so on, refer to this [PDF](https://github.com/phlee6899/Moodifly/blob/master/Moodifly%20Guide/Guide.pdf).
