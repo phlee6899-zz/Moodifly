@@ -15,19 +15,19 @@ export default function Navbar() {
     const mainDesc = document.querySelector(".mainDesc");
     // node.appendChild(textnode);
     switch (e.target.className) {
-      case "historyLabel":
+      case "historyLabel navLabel":
         setTitle("Listening History Based Recommendation");
         setContent(
           "We know how much you love your favorite artists and tracks. On Moodifly, we recommend personalized music based on your music taste. You can also use our slider feature that allows you to filter the recommendation based on values like energy and danceability."
         );
         break;
-      case "textLabel":
+      case "textLabel navLabel":
         setTitle("Text Sentiment Based Recommendation");
         setContent(
           "No matter what your mood is we will be there for you. Write down your thoughts, feelings, or whatever that is going through your head. Moodifly will recommend a song that you want to hear right at this moment using our real-time text sentiment analyis."
         );
         break;
-      case "emojiLabel":
+      case "emojiLabel navLabel":
         setTitle("Emoji Based Recommendation");
         setContent(
           "Now, more emojis are used than ever before and we recognize emoji's crucial role in filling the emotional cues missing from our typed conversations. On Moodifly, users can select a single emoji or a chain of emojis for a personalized recommendation."
@@ -58,7 +58,7 @@ export default function Navbar() {
           <div className="menu">
             <ul>
               <li
-                className="navLabel"
+                className="historyLabel navLabel"
                 onClick={() => history.push("/history")}
                 onMouseOver={mouseoverAction}
                 onMouseLeave={mouseLeaveAction}
@@ -67,7 +67,7 @@ export default function Navbar() {
               </li>
               <li className="divide">|</li>
               <li
-                className="navLabel"
+                className="textLabel navLabel"
                 onClick={() => history.push("/sentiment")}
                 onMouseOver={mouseoverAction}
                 onMouseLeave={mouseLeaveAction}
@@ -76,7 +76,7 @@ export default function Navbar() {
               </li>
               <li className="divide">|</li>
               <li
-                className="navLabel"
+                className="emojiLabel navLabel"
                 onClick={() => history.push("/emoji")}
                 onMouseOver={mouseoverAction}
                 onMouseLeave={mouseLeaveAction}
